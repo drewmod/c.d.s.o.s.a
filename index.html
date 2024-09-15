@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="style.css">
+    <title>C.D.S.O.S.A </title>
+   
+</head>
+<body>
+
+    <header>
+        <!-- Logo -->
+        <img src="./WhatsApp Image 2024-09-14 at 23.00.35.jpeg" alt="Old Students Union Logo">
+
+        <!-- Header Text (hidden on small screens) -->
+        <div class="header-text">
+            <h1>C.D.S.O.S.A Meeting</h1>
+            <p>Motto: Uniting to Build a Stronger Community and Support One Another</p>
+        </div>
+
+        <!-- Join Meeting Button in the Header -->
+        <a href="https://meet.google.com/kfg-qijb-xvx" target="_blank" class="meeting-link">Join the Meeting Online</a>
+    </header>
+
+    <main>
+        <div id="countdown">Meeting starts in: <span id="time"></span></div>
+        <h2>Meeting Agenda</h2>
+        <p><strong>Date:</strong> September 15, 2024</p>
+        <p><strong>Time:</strong> 3:00 PM (WAT)</p>
+        
+        <div class="agenda">
+            <div class="agenda-item">
+                <h3>1. Opening Prayer</h3>
+            </div>
+            <div class="agenda-item">
+                <h3>2. Opening remarks</h3>
+            </div>
+            <div class="agenda-item">
+                <h3>3. Introduction</h3>
+            </div>
+            <div class="agenda-item">
+                <h3>4. Reading of the last meeting’s minutes</h3>
+            </div>
+            <div class="agenda-item">
+                <h3>5. Projects</h3>
+            </div>
+            <div class="agenda-item">
+                <h3>6. Welfare</h3>
+            </div>
+            <div class="agenda-item">
+                <h3>7. Dragging all along</h3>
+            </div>
+            <div class="agenda-item">
+                <h3>8. End of year party</h3>
+            </div>
+            <div class="agenda-item">
+                <h3>9. AOB</h3>
+            </div>
+            <div class="agenda-item">
+                <h3>10. Closing remarks</h3>
+            </div>
+            <div class="agenda-item">
+                <h3>11. Closing prayer</h3>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Old Students Union. All rights reserved.</p>
+    </footer>
+
+    <!-- Countdown Timer Script -->
+    <script>
+        // Set the date and time for the countdown
+        var countDownDate = new Date("Sep 15, 2024 15:00:00").getTime();
+
+        // Update the countdown every second
+        var countdownFunction = setInterval(function() {
+
+            // Get today's date and time
+            var now = new Date().getTime();
+
+            // Find the time remaining
+            var distance = countDownDate - now;
+
+            // Time calculations for days, hours, minutes, and seconds
+            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            // Output the result in the element with id="time"
+            document.getElementById("time").innerHTML = days + "d " + hours + "h "
+            + minutes + "m " + seconds + "s ";
+
+            // If the countdown is over, write some text 
+            if (distance < 0) {
+                clearInterval(countdownFunction);
+                document.getElementById("time").innerHTML = "Meeting has started!";
+            }
+        }, 1000);
+    </script>
+</body>
+</html>
+
+
+

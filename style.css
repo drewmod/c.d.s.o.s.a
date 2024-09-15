@@ -1,0 +1,183 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #ece3ef; /* Updated background color */
+    color: #384c57; /* Updated text color */
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header Section */
+header {
+    background-color: #541ad0; /* Updated header background color */
+    color: white;
+    display: flex;
+    justify-content: space-between; /* Aligns logo, text, and button */
+    align-items: center;
+    padding: 1rem 2rem; /* Adjust padding for header */
+    position: relative;
+    flex-wrap: wrap;
+}
+
+header img {
+    width: 120px;
+    height: auto;
+}
+
+header .header-text {
+    text-align: center;
+    flex: 1;
+    margin: 0 20px; /* Space between logo and button */
+}
+
+header h1 {
+    font-size: 2.2rem;
+    margin-bottom: 0.5rem;
+}
+
+header p {
+    font-size: 1rem;
+}
+
+/* Meeting Button in Header */
+.meeting-link {
+    background-color: #d70a16; /* Updated button background color */
+    color: white;
+    padding: 12px 24px;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 50px;
+    transition: background-color 0.3s ease;
+}
+
+.meeting-link:hover {
+    background-color: #b20914; /* Darkened button color on hover */
+}
+
+/* Main Content */
+main {
+    flex-grow: 1;
+    padding: 20px;
+    max-width: 900px;
+    margin: 20px auto;
+    background-color: white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center items horizontally */
+}
+
+main:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+h2 {
+    color: #d70a16; /* Updated heading color */
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+}
+
+.agenda {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center items horizontally */
+    width: 100%;
+}
+
+.agenda-item {
+    margin-bottom: 20px;
+    width: 100%; /* Ensure items take full width */
+    max-width: 600px; /* Limit maximum width of agenda items */
+}
+
+.agenda-item h3 {
+    color: #384c57; /* Updated subheading color */
+    font-size: 1.3rem;
+    margin-bottom: 8px;
+}
+
+.agenda-item p {
+    font-size: 1rem;
+    color: #666;
+}
+
+#countdown {
+    font-size: 1.5rem;
+    color: #d70a16;
+    margin-bottom: 20px;
+    text-align: center;
+    background-color: #ece3ef;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+#time {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+/* Footer Section */
+footer {
+    text-align: center;
+    padding: 2rem; /* Increased footer padding for height */
+    background-color: #541ad0; /* Updated footer background color */
+    color: white;
+    font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    header img {
+        width: 100px; /* Adjust logo size for small screens */
+    }
+
+    header h1 {
+        font-size: 1.8rem;
+        display: none; /* Hide heading on small screens */
+    }
+
+    header p {
+        display: none; /* Hide paragraph on small screens */
+    }
+
+    .meeting-link {
+        font-size: 0.9rem;
+        padding: 10px 20px;
+        margin-top: 10px; /* Add margin for spacing */
+    }
+}
+
+@media (max-width: 480px) {
+    header img {
+        width: 80px;
+    }
+
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    .meeting-link {
+        font-size: 0.8rem;
+        padding: 8px 18px;
+    }
+
+    .agenda-item h3 {
+        font-size: 1.1rem;
+    }
+}
