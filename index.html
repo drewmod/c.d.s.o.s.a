@@ -21,13 +21,13 @@
         </div>
 
         <!-- Join Meeting Button in the Header -->
-        <a href="https://meet.google.com/kfg-qijb-xvx" target="_blank" class="meeting-link">Join the Meeting Online</a>
+        <a href="https://meet.google.com/uqc-zzqy-rut" target="_blank" class="meeting-link">Join the Meeting Online</a>
     </header>
 
     <main>
         <div id="countdown">Meeting starts in: <span id="time"></span></div>
         <h2>Meeting Agenda</h2>
-        <p><strong>Date:</strong> September 15, 2024</p>
+        <p><strong>Date:</strong> December 21, 2024</p>
         <p><strong>Time:</strong> 2:00 PM (WAT)</p>
         
         <div class="agenda">
@@ -36,21 +36,35 @@
             </div>
             <div class="agenda-item">
                 <h3>2. Opening remarks</h3>
+                <p>President/Acting Chairperson - 5mins</p>
             </div>
             <div class="agenda-item">
-                <h3>3. Introduction</h3>
+                <h3>3. Review of the Year - Theophilus </h3>
+                    <p> Highlights of Key Achievements 
+                    in the Year and Challenges Faced and Addressed</p>
+                
+            </div>
+            <h3>Slide Present - Adebola Modongho</h3>
+            <p>Important of being part of A School Association/Union</p>
+            <div class="agenda-item">
+                <h3>5. Constitution Adoption - Temissan Ereku</h3>
+                <p>Presentation of the Constitution Draft by the Constitution Committee</p>
+                <p>Final Adoption and Ratification</p>
+            </div>
+            <div>
+                <h3>6. Financial Report - </h3>
+            </div>
+            <div>
+                <h3>7. End-of-Year Meet and Greet - MC</h3>
             </div>
             <div class="agenda-item">
-                <h3>4. Reading of the last meeting’s minutes</h3>
+                <h3>8. AOB</h3>
+                <p>Networking and Socializing Among Members</p>
+                <p>Sharing Memories and Reconnecting</p>
+                <p>Light Refreshments or Entertainment (if applicable)</p></p>
             </div>
             <div class="agenda-item">
-                <h3>5. Constitution Adoption</h3>
-            </div>
-            <div class="agenda-item">
-                <h3>6. AOB</h3>
-            </div>
-            <div class="agenda-item">
-                <h3>7. Closing remarks</h3>
+                <h3>9. Closing remarks</h3>
             </div>
             <div class="agenda-item">
                 <h3>8. Closing prayer</h3>
@@ -63,36 +77,32 @@
     </footer>
 
     <!-- Countdown Timer Script -->
-    <script>
-        // Set the date and time for the countdown
-        var countDownDate = new Date("Nov 17, 2024 14:00:00").getTime();
+   <script>
+    // Set the date and time for the meeting (2 PM WAT on December 21, 2024)
+    var countDownDate = new Date('2024-12-21T14:00:00Z'); // 2 PM WAT is UTC+1
 
-        // Update the countdown every second
-        var countdownFunction = setInterval(function() {
+    // Update the countdown every second
+    var countdownFunction = setInterval(function () {
+        var now = new Date().getTime(); // Get current time in milliseconds
+        var distance = countDownDate - now;
 
-            // Get today's date and time
-            var now = new Date().getTime();
+        // Time calculations for days, hours, minutes, and seconds
+        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-            // Find the time remaining
-            var distance = countDownDate - now;
-
-            // Time calculations for days, hours, minutes, and seconds
-            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-            // Output the result in the element with id="time"
-            document.getElementById("time").innerHTML = days + "d " + hours + "h "
-            + minutes + "m " + seconds + "s ";
-
-            // If the countdown is over, write some text 
-            if (distance < 0) {
-                clearInterval(countdownFunction);
-                document.getElementById("time").innerHTML = "Meeting has started!";
-            }
-        }, 1000);
-    </script>
+        // Output the result in the element with id="time"
+        if (distance >= 0) {
+            document.getElementById("time").innerHTML = 
+                (days > 0 ? days + "d " : "") + hours + "h " + minutes + "m " + seconds + "s ";
+        } else {
+            // Countdown is over
+            clearInterval(countdownFunction);
+            document.getElementById("time").innerHTML = "Meeting has started!";
+        }
+    }, 1000);
+</script>
 </body>
 </html>
 
